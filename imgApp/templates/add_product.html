@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <title>Image</title>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<style>
+  body {
+    background-image: url('{% static "image/ff.jpg" %}');
+    background-size: cover;
+  }
+    .container {
+        background-color: #f8f9fa;
+        margin-top: 50px;
+        padding-top: 50px;
+        padding-bottom: 80px;
+        width:50%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-heading {
+        text-align: center;
+        font-size: 50px;
+        color: #343a40;
+        margin-bottom: 30px;
+    }
+    .form-control {
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        font-size: 20px;
+        color: #343a40;
+    }
+    .btn-info {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 10px;
+        margin-left: 80px;
+        margin-top: 30px;
+    }
+</style>
+
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">ADD PRODUCT DETAILS</h1>
+      <br><br>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <form enctype="multipart/form-data" method="post" action="{% url 'add_product' %}">
+            {% csrf_token %}
+            <input type="text" name="pname" class="form-control mt-3" placeholder="Enter Product Name">
+            <input type="number" name="price" class="form-control mt-3" placeholder="Enter Product Price">
+            <input type="number" name="qty" class="form-control mt-3" placeholder="Enter Product Quantity">
+            <input type="file" name="file" class="form-control mt-3" accept="image/*">
+            <button type="submit" class="btn btn-info w-50 mt-4">Submit</button>
+          </form>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
